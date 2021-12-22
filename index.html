@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="login-page.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <div class="title">
+      <h1>Sign In</h1> </div>
+  
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+    
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username"> 
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit" onclick="pageRedirect()">
+    </form>
+
+    <div>
+                            <span class="login__account">Don't have an Account ?</span>
+                            <span class="login__signin" id="sign-up">Sign Up</span>
+                        </div> 
+                        <br>
+<div class=icons>
+  <a href="https://dl.iitu.edu.kz/login/index.php"><img src="openid.jpg" width="189" height="40" alt="icon"> </a>
+  <a href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dgo-to-account-button%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession"><img src="google.jpg" width="50" height="45" alt="icon"></a>
+  <a href="https://passport.yandex.kz/auth?mode=add-user&retpath=%2F%2Fyandex.kz%2Fsupport%2Fid%2Fauth.html"><img src="yandex.png" width="52" height="39" alt="icon"> </a>
+</div>
+  
+  </main>
+  <script>
+    const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-form-submit");
+const loginErrorMsg = document.getElementById("login-error-msg");
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username === "user" && password === "web_dev") {
+        alert("You have successfully logged in.");
+        location.href = "https://aigerimali.github.io/Panel/";
+        //location.reload();
+    } else {
+        loginErrorMsg.style.opacity = 1;
+    }
+}) 
+  </script>
+
+ 
+
+
+
+</body>
+
+
+</html>
